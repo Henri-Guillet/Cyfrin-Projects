@@ -1,6 +1,6 @@
 # Foundry Fund Me
 
-This contract is based on the Cyfrin Solidity Course (https://updraft.cyfrin.io/courses/foundry/foundry-fund-me/fund-me-project-setup)
+This contract is based on the Cyfrin Solidity Course (https://github.com/Cyfrin/foundry-fund-me-cu)
 
 # About
 
@@ -18,7 +18,6 @@ This is a minimal project allowing users to fund the contract owner with donatio
 - [Deployment to a testnet or mainnet](#deployment-to-a-testnet-or-mainnet)
   - [Scripts](#scripts)
     - [Fund](#fund)
-    - [Withdraw](#withdraw)
 - [Thank you!](#thank-you)
 
 
@@ -35,9 +34,10 @@ This is a minimal project allowing users to fund the contract owner with donatio
 ## Quickstart
 
 ```
-git clone https://github.com/Cyfrin/foundry-fund-me-cu
-cd foundry-fund-me-cu
-make
+git clone https://github.com/Henri-Guillet/Cyfrin-Projects/tree/main/Foundry/Fundamentals/Funding
+cd Funding
+make install
+forge build
 ```
 
 # Usage
@@ -79,22 +79,37 @@ forge coverage
 
 1. Setup environment variables
 
-You'll want to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
+You need to set the following environment variables in a `.env` file (you can use `.env.example` as a template):
 
-- `PRIVATE_KEY`: The private key of your account (like from [metamask](https://metamask.io/)). **NOTE:** FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
-  - You can [learn how to export it here](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key).
-- `SEPOLIA_RPC_URL`: This is url of the sepolia testnet node you're working with. You can get setup with one for free from [Alchemy](https://alchemy.com/?a=673c802981)
+```env
+SEPOLIA_RPC_URL=your_rpc_url
+ETHERSCAN_API_KEY=your_etherscan_key
+```
 
-Optionally, add your `ETHERSCAN_API_KEY` if you want to verify your contract on [Etherscan](https://etherscan.io/).
+Use the following command to securely import your private key into Foundry:
 
-2. Get testnet ETH
+```bash
+cast wallet import <keyName> --interactive
+```
+
+Then update your Makefile to use the corresponding key name instead of pk_dev1.
+
+1. Get testnet ETH
 
 Head over to [faucets.chain.link](https://faucets.chain.link/) and get some testnet ETH. You should see the ETH show up in your metamask.
 
 3. Deploy
 
+On Sepolia
+
 ```
-forge script script/DeployFundMe.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --etherscan-api-key $ETHERSCAN_API_KEY
+make deploy ARGS="--network sepolia"
+```
+
+or on Anvil
+
+```
+make deploy
 ```
 
 ## Scripts
@@ -104,14 +119,7 @@ After deploying to a testnet or local net, you can run the scripts.
 ### Fund
 
 ```
-forge script script/Interactions.s.sol:FundFundMe --rpc-url sepolia  --private-key $PRIVATE_KEY  --broadcast
+make fund ARGS="--network sepolia" SENDER_ADDRESS=0xYourAddress
 ```
-
-### Withdraw
-
-```
-forge script script/Interactions.s.sol:WithdrawFundMe --rpc-url sepolia  --private-key $PRIVATE_KEY  --broadcast
-```
-
 
 # Thank you!

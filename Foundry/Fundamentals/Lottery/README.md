@@ -16,7 +16,6 @@ The contract is written in Solidity and tested using [Foundry](https://book.getf
   - [Quickstart](#quickstart)
 - [Usage](#usage)
   - [Start a local node](#start-a-local-node)
-  - [Library](#library)
   - [Deploy](#deploy)
   - [Deploy - Other Network](#deploy---other-network)
   - [Testing](#testing)
@@ -43,8 +42,9 @@ The contract is written in Solidity and tested using [Foundry](https://book.getf
 ## Quickstart
 
 ```
-git clone https://github.com/Henri-Guillet/Foundry/Fundamentals/Lottery
+git clone https://github.com/Henri-Guillet/Cyfrin-Projects/tree/main/Foundry/Fundamentals/Lottery
 cd Lottery
+make install
 forge build
 ```
 
@@ -54,14 +54,6 @@ forge build
 
 ```
 make anvil
-```
-
-## Library
-
-If you're having a hard time installing the chainlink library, you can optionally run this command. 
-
-```
-forge install smartcontractkit/chainlink-brownie-contracts@1.1.1 --no-commit
 ```
 
 ## Deploy
