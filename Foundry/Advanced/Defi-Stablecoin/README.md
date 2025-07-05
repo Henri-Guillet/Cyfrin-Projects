@@ -1,16 +1,35 @@
-# Foundry Smart Contract Lottery
+# Foundry Defi Stablecoin
 
-This project is based on a section of the [Cyfrin Foundry Solidity Course](https://github.com/Cyfrin/foundry-smart-contract-lottery-cu).
+This project is based on a section of the [Cyfrin Foundry Solidity Course](https://github.com/Cyfrin/foundry-defi-stablecoin-cu).
 
-It implements a decentralized lottery system using:
 
-- **Chainlink VRF** (Verifiable Random Function) to select a truly random winner.
-- **Chainlink Automation** to automatically trigger the winner selection and prize distribution once the lottery conditions are met.
+This repository contains a minimal, on-chain stablecoin protocol that continuously targets  
+**`1 DSC = 1 USD`**.
+
+## Key Properties
+
+- **Exogenously collateralized** – backed **only** by external assets (WETH & WBTC).  
+- **Dollar-pegged** – maintains a 1-to-1 value with the U.S. dollar.  
+- **Algorithmically stabilized** – an on-chain mechanism enforces the peg with **no governance and no fees**.
+
+> _Think of it as a stripped-down DAI: no governance tokens, no stability fees, collateral limited to WETH and WBTC._
+
+## Collateral Safety
+
+The system is designed to remain **over-collateralized at all times**:
+
+\[
+\text{Total Collateral Value} \;>\; \text{USD Value of All DSC in Circulation}
+\]
+
+If the collateral value ever approaches the value of outstanding DSC, automated safeguards restore the required surplus.
 
 The contract is written in Solidity and tested using [Foundry](https://book.getfoundry.sh/).
 
 
-- [Foundry Smart Contract Lottery](#foundry-smart-contract-lottery)
+- [Foundry Defi Stablecoin](#foundry-defi-stablecoin)
+  - [Key Properties](#key-properties)
+  - [Collateral Safety](#collateral-safety)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Quickstart](#quickstart)
@@ -33,16 +52,14 @@ The contract is written in Solidity and tested using [Foundry](https://book.getf
 
 ## Requirements
 
-- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
 - [foundry](https://getfoundry.sh/)
   - You'll know you did it right if you can run `forge --version` and you see a response like `forge Version: 1.2.3-stable`
 
 ## Quickstart
 
 ```
-git clone https://github.com/Henri-Guillet/Cyfrin-Projects/tree/main/Foundry/Fundamentals/Lottery
-cd Lottery
+git clone https://github.com/Henri-Guillet/Cyfrin-Projects/blob/main/Foundry/Advanced/Defi-Stablecoin
+cd Defi-Stablecoin
 make install
 forge build
 ```
@@ -110,7 +127,6 @@ cast wallet import <keyName> --interactive
 
 Then update your Makefile to use the corresponding key name instead of pk_dev1.
 
-Make sure to update the account field in `scripts/HelperConfig.s.sol` to match your actual deployer address.
 
 ## 2. Get testnet ETH
 

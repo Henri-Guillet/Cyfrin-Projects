@@ -7,3 +7,18 @@
 [submodule "Foundry/Advanced/Defi-Stablecoin/lib/chainlink-brownie-contracts"]
 	path = Foundry/Advanced/Defi-Stablecoin/lib/chainlink-brownie-contracts
 	url = https://github.com/smartcontractkit/chainlink-brownie-contracts
+[submodule "Foundry/Advanced/CCIP-token-rebase/lib/forge-std"]
+	path = Foundry/Advanced/CCIP-token-rebase/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "Foundry/Advanced/CCIP-token-rebase/lib/openzeppelin-contracts"]
+	path = Foundry/Advanced/CCIP-token-rebase/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "Foundry/Advanced/CCIP-token-rebase/lib/chainlink-ccip"]
+	path = Foundry/Advanced/CCIP-token-rebase/lib/chainlink-ccip
+	url = https://github.com/smartcontractkit/chainlink-ccip
+[submodule "Foundry/Advanced/CCIP-token-rebase/lib/chainlink-evm"]
+	path = Foundry/Advanced/CCIP-token-rebase/lib/chainlink-evm
+	url = https://github.com/smartcontractkit/chainlink-evm
+[submodule "Foundry/Advanced/CCIP-token-rebase/lib/chainlink-local"]
+	path = Foundry/Advanced/CCIP-token-rebase/lib/chainlink-local
+	url = https://github.com/smartcontractkit/chainlink-local
