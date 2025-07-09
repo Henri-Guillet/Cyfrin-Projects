@@ -37,7 +37,7 @@ The contract is written in Solidity and tested using [Foundry](https://book.getf
 ```
 git clone https://github.com/Henri-Guillet/Cyfrin-Projects/blob/main/Foundry/Advanced/Merkle-airdrop
 cd Merkle-airdrop
-make install
+forge install
 forge build
 ```
 

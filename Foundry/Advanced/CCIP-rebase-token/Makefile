@@ -16,7 +16,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install :; forge install smartcontractkit/chainlink-evm@contracts-v1.4.0 && forge install smartcontractkit/chainlink-ccip@contracts-ccip-v1.6.0 && forge install openzeppelin/openzeppelin-conrtacts@v5.3.0 && forge install smartcontractkit/chainlink-local@v0.2.5-beta.0
+install :; forge install smartcontractkit/chainlink-evm@contracts-v1.4.0 && forge install smartcontractkit/chainlink-ccip@contracts-ccip-v1.6.0 && forge install openzeppelin/openzeppelin-contracts@v5.3.0 && forge install smartcontractkit/chainlink-local@v0.2.5-beta.0
 
 # Update Dependencies
 update:; forge update

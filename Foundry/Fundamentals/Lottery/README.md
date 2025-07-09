@@ -44,7 +44,7 @@ The contract is written in Solidity and tested using [Foundry](https://book.getf
 ```
 git clone https://github.com/Henri-Guillet/Cyfrin-Projects/tree/main/Foundry/Fundamentals/Lottery
 cd Lottery
-make install
+forge install
 forge build
 ```
 

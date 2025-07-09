@@ -36,7 +36,7 @@ This is a minimal project allowing users to fund the contract owner with donatio
 ```
 git clone https://github.com/Henri-Guillet/Cyfrin-Projects/tree/main/Foundry/Fundamentals/Funding
 cd Funding
-make install
+forge install
 forge build
 ```
 

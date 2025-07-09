@@ -50,7 +50,7 @@ The contract is written in Solidity and tested using [Foundry](https://book.getf
 ```
 git clone https://github.com/Henri-Guillet/Cyfrin-Projects/blob/main/Foundry/Advanced/CCIP-rebase-token
 cd CCIP-rebase-token
-make install
+forge install
 forge build
 ```
 
