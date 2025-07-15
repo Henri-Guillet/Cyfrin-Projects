@@ -67,3 +67,15 @@
 [submodule "Foundry/Advanced/Upgradeable-contracts/lib/foundry-devops"]
 	path = Foundry/Advanced/Upgradeable-contracts/lib/foundry-devops
 	url = https://github.com/Cyfrin/foundry-devops
+[submodule "Foundry/Advanced/Account-abstraction/lib/forge-std"]
+	path = Foundry/Advanced/Account-abstraction/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "Foundry/Advanced/Account-abstraction/lib/account-abstraction"]
+	path = Foundry/Advanced/Account-abstraction/lib/account-abstraction
+	url = https://github.com/eth-infinitism/account-abstraction
+[submodule "Foundry/Advanced/Account-abstraction/lib/openzeppelin-contracts"]
+	path = Foundry/Advanced/Account-abstraction/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "Foundry/Advanced/Account-abstraction/lib/foundry-devops"]
+	path = Foundry/Advanced/Account-abstraction/lib/foundry-devops
+	url = https://github.com/cyfrin/foundry-devops
